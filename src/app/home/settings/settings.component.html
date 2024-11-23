@@ -1,0 +1,52 @@
+<div class="dialogTitle" [ngStyle]="setting.getHeaderStyle()">
+  <input type="image" src="assets\icon\back.png" (click)="closeDialog()" alt="Submit" align="left"
+    class="dialogBackBtn">
+  Settings
+</div>
+
+<div class="dialogPage" style="font-size: 17px; color: black; background-color: white;">
+  <div class="dialogText">
+    <div style="padding-bottom: 10px;">
+      Night Mode
+      <mat-slide-toggle #toggleElement style="padding-left: 5px;" [color]="color" [checked]="checked"
+        (change)="nightModeChanged($event)" [disabled]="disabled">
+      </mat-slide-toggle>
+      <div style="font-size:13px;">Change the background dark grey color.</div>
+    </div>
+    <mat-divider></mat-divider>
+
+    <div style="padding-top:10px;padding-bottom:10px;">
+      Text Font Size
+      <mat-form-field style="padding-left: 5px;" appearance="outline">
+        <mat-select [(value)]="selectedFontSize" (selectionChange)="textFontSizeChanged($event)">
+          <mat-option *ngFor="let fontSize of textFontSize" [value]="fontSize">
+            {{fontSize}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div style="font-size:13px; padding-top: 5px;">Change the size of text.</div>
+    </div>
+    <mat-divider></mat-divider>
+
+    <div style="padding-top:10px;padding-bottom:10px;">
+      Header Background Color
+      <input matInput [(ngModel)]="pageHeaderColor" type="color" style="width:55px;height:30px;">
+      <div style="font-size:13px; padding-top: 5px;">Change the background color of dialog header.</div>
+    </div>
+    <mat-divider></mat-divider>
+
+    <div style="padding-top:10px;padding-bottom:10px;">
+      Header Title Color
+      <input matInput [(ngModel)]="pageTextColor" type="color" style="width:55px;height:30px;">
+      <div style="font-size:13px; padding-top: 5px;">Change the color of dialog title.</div>
+    </div>
+    <mat-divider></mat-divider>
+
+    <div style="padding-top:10px;padding-bottom:10px;">
+      <input matInput [ngModel]="'Reset'" type="submit" style="width:75px;height:30px;"
+        (click)="openResetConfirmationDialog()">
+      <div style="font-size:13px; padding-top: 5px;">Reset all settings.</div>
+    </div>
+    <mat-divider></mat-divider>
+  </div>
+</div>

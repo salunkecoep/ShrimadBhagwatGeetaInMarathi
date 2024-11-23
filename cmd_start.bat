@@ -1,0 +1,2 @@
+code .
+ionic serve 

@@ -1,0 +1,142 @@
+.demo-tab-group .mat-tab-label {
+    height: 72px;
+ }
+  
+ .mat-icon {
+    vertical-align: middle;
+ }
+  
+::ng-deep.mat-tab-label, ::ng-deep.mat-tab-label-active{
+    min-width: 0 !important;
+    height: 35px !important;
+    padding: 5px !important;
+    margin: 5px !important;
+    opacity: 0.9 !important;
+    font-size: 15px !important;
+}
+  
+::ng-deep.mat-tab-header-pagination {
+    min-width: 15px!important;
+}
+  
+.adhayaTab {
+   padding-left: 10px; 
+   padding-right: 10px; 
+   overflow: scroll;
+}
+ 
+.homePageHeader {
+   text-align:center;
+   padding-top:10px;
+   padding-bottom:10px;
+   font-size:20px;
+}
+ 
+.homePageBtn {
+   padding-right:5px;
+}
+ 
+.tabTitle {
+   padding-left:5%;
+}
+ 
+.mat-tab-group {
+   font-family: "Times New Roman", Times, serif;
+}
+
+/* Remove shape around arrow buttons */
+::ng-deep.mat-elevation-z4 {
+   box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px 0px rgba(0, 0, 0, 0);
+}
+ 
+// Control the position and size of menu button.
+.home-main-menu {
+   position: absolute;
+   right:0px;
+   top:0px;
+}
+
+// Control the menu items font and color.
+::ng-deep.mat-menu-item {
+   color: black;
+   font-size: 17px;
+}
+::ng-deep.mat-menu-item .mat-icon-no-color {
+   color: black;
+   height: 35px;
+   width: 35px;
+}
+
+// Control the layout of bottom toolbar.
+.bottom-tab-toolbar
+{
+  position: fixed !important;
+  width: 100% !important;
+  bottom:0px !important;
+  z-index: 10001;
+  margin-left: 0px !important;
+  height: 70px;
+}
+
+.toolbar-bottom-line  {
+   position: absolute;
+   bottom:0px;
+ }
+
+.toolbar-shuffle-btn  {
+   left:5%;
+   top:35px;
+   font-size: 25px;
+}
+
+.toolbar-repeat-btn  {
+   right:5%;
+   top:35px;
+   font-size: 25px;
+}
+
+.toolbar-prev-btn  {
+   left:15%;
+   top:30px;
+   font-size: 35px;
+}
+
+.toolbar-next-btn {
+   right:17%;
+   top:30px;
+   font-size: 35px;
+}
+ 
+ .toolbar-play-btn  {
+   left:45%;
+   top:30px;
+   font-size: 35px;
+ }
+
+ .toolbar-left-lable  {
+   top:5px;
+   left:3%;
+   font-size: 15px;
+}
+  
+ .toolbar-right-lable  {
+   top:5px;
+   right:5%;
+   font-size: 15px;
+ }
+
+ .toolbar-top-line  {
+   position: absolute;
+   bottom: 0px;
+   height: 17px;
+   color: black !important;
+ }
+ 
+ .toolbar-slider  {
+   top:-10px;
+   left:15%;
+   right:15%;
+   height: 10px !important;
+   opacity: 1.0 !important;
+ }
+ 

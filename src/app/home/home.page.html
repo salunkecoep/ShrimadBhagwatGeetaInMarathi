@@ -1,0 +1,337 @@
+<div class="homePageHeader" [ngStyle]="setting.getHeaderStyle()">
+  <b>{{title}}</b>
+
+  <div class="home-main-menu">
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon style="font-size: 25px !important; color:black">more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="openSettingsDialog()">
+        <mat-icon>settings</mat-icon>
+        <span>Settings</span>
+      </button>
+      <button mat-menu-item (click)="openRateUsDialog()">
+        <mat-icon>rate_review</mat-icon>
+        <span>Rate Us</span>
+      </button>
+      <button mat-menu-item (click)="shareApp()">
+        <mat-icon>share</mat-icon>
+        <span>Share via WhatsApp</span>
+      </button>
+      <button mat-menu-item (click)="openAboutUsDialog()">
+        <mat-icon>info</mat-icon>
+        <span>About</span>
+      </button>
+    </mat-menu>
+  </div>
+
+  <input type="image" style="padding-right: 35px;" src="assets\icon\pasaydan.png" (click)="openPasaydanDialog()"
+    alt="Submit" align="right" class="homePageBtn">
+  <input type="image" src="assets\icon\poet.png" (click)="openPoetDialog()" alt="Submit" align="right"
+    class="homePageBtn">
+  <input type="image" src="assets\icon\summary.png" (click)="openSummaryDialog()" alt="Submit" align="right"
+    class="homePageBtn">
+</div>
+
+<mat-tab-group mat-align-tabs="center" animationDuration="0ms" (selectedTabChange)="onTabChanged($event)"
+  [(selectedIndex)]="selectedTabIndex" (touchstart)="tabGroupTouchStart($event)" (touchmove)="tabGroupTouchMove($event)"
+  (touchend)="tabGroupTouchEnd($event)">
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <span class="tabTitle" [ngStyle]="setting.getHeaderStyle()">अध्याय १ <br> ॥ अर्जुनविषादयोग ॥</span>
+      </div>
+    </ng-template>
+    <div [ngStyle]="getTabStyle()" class="adhayaTab" (touchstart)="tabTouchStart($event)"
+      (touchmove)="tabTouchMove($event)" (touchend)="tabTouchEnd($event)">
+      <app-chapter1></app-chapter1>
+      <br>
+      <br>
+      <br>
+    </div>
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <span class="tabTitle" [ngStyle]="setting.getHeaderStyle()">अध्याय २ <br> ॥ सांख्ययोग ॥</span>
+      </div>
+    </ng-template>
+    <div [ngStyle]="getTabStyle()" class="adhayaTab" (touchstart)="tabTouchStart($event)"
+      (touchmove)="tabTouchMove($event)" (touchend)="tabTouchEnd($event)">
+      <app-chapter2></app-chapter2>
+      <br>
+      <br>
+      <br>
+    </div>
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <span class="tabTitle" [ngStyle]="setting.getHeaderStyle()">अध्याय ३ <br> ॥ कर्मयोग ॥</span>
+      </div>
+    </ng-template>
+    <div [ngStyle]="getTabStyle()" class="adhayaTab" (touchstart)="tabTouchStart($event)"
+      (touchmove)="tabTouchMove($event)" (touchend)="tabTouchEnd($event)">
+      <app-chapter3></app-chapter3>
+      <br>
+      <br>
+      <br>
+    </div>
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <span class="tabTitle" [ngStyle]="setting.getHeaderStyle()">अध्याय ४ <br> ॥ ज्ञानकर्मसंन्यासयोग ॥</span>
+      </div>
+    </ng-template>
+    <div [ngStyle]="getTabStyle()" class="adhayaTab" (touchstart)="tabTouchStart($event)"
+      (touchmove)="tabTouchMove($event)" (touchend)="tabTouchEnd($event)">
+      <app-chapter4></app-chapter4>
+      <br>
+      <br>
+      <br>
+    </div>
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <span class="tabTitle" [ngStyle]="setting.getHeaderStyle()">अध्याय ५ <br> ॥ कर्मसंन्यासयोग ॥</span>
+      </div>
+    </ng-template>
+    <div [ngStyle]="getTabStyle()" class="adhayaTab" (touchstart)="tabTouchStart($event)"
+      (touchmove)="tabTouchMove($event)" (touchend)="tabTouchEnd($event)">
+      <app-chapter5></app-chapter5>
+      <br>
+      <br>
+      <br>
+    </div>
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <span class="tabTitle" [ngStyle]="setting.getHeaderStyle()">अध्याय ६ <br> ॥ आत्मसंयमयोग ॥</span>
+      </div>
+    </ng-template>
+    <div [ngStyle]="getTabStyle()" class="adhayaTab" (touchstart)="tabTouchStart($event)"
+      (touchmove)="tabTouchMove($event)" (touchend)="tabTouchEnd($event)">
+      <app-chapter6></app-chapter6>
+      <br>
+      <br>
+      <br>
+    </div>
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <span class="tabTitle" [ngStyle]="setting.getHeaderStyle()">अध्याय ७ <br> ॥ ज्ञानविज्ञानयोग ॥</span>
+      </div>
+    </ng-template>
+    <div [ngStyle]="getTabStyle()" class="adhayaTab" (touchstart)="tabTouchStart($event)"
+      (touchmove)="tabTouchMove($event)" (touchend)="tabTouchEnd($event)">
+      <app-chapter7></app-chapter7>
+      <br>
+      <br>
+      <br>
+    </div>
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <span class="tabTitle" [ngStyle]="setting.getHeaderStyle()">अध्याय ८ <br> ॥ अक्षरब्रह्मयोग ॥</span>
+      </div>
+    </ng-template>
+    <div [ngStyle]="getTabStyle()" class="adhayaTab" (touchstart)="tabTouchStart($event)"
+      (touchmove)="tabTouchMove($event)" (touchend)="tabTouchEnd($event)">
+      <app-chapter8></app-chapter8>
+      <br>
+      <br>
+      <br>
+    </div>
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <span class="tabTitle" [ngStyle]="setting.getHeaderStyle()">अध्याय ९ <br> ॥ राजविद्याराजगुह्ययोग ॥</span>
+      </div>
+    </ng-template>
+    <div [ngStyle]="getTabStyle()" class="adhayaTab" (touchstart)="tabTouchStart($event)"
+      (touchmove)="tabTouchMove($event)" (touchend)="tabTouchEnd($event)">
+      <app-chapter9></app-chapter9>
+      <br>
+      <br>
+      <br>
+    </div>
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <span class="tabTitle" [ngStyle]="setting.getHeaderStyle()">अध्याय १० <br> ॥ विभूतियोग ॥</span>
+      </div>
+    </ng-template>
+    <div [ngStyle]="getTabStyle()" class="adhayaTab" (touchstart)="tabTouchStart($event)"
+      (touchmove)="tabTouchMove($event)" (touchend)="tabTouchEnd($event)">
+      <app-chapter10></app-chapter10>
+      <br>
+      <br>
+      <br>
+    </div>
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <span class="tabTitle" [ngStyle]="setting.getHeaderStyle()">अध्याय ११ <br> ॥ विश्वरूपदर्शनयोग ॥</span>
+      </div>
+    </ng-template>
+    <div [ngStyle]="getTabStyle()" class="adhayaTab" (touchstart)="tabTouchStart($event)"
+      (touchmove)="tabTouchMove($event)" (touchend)="tabTouchEnd($event)">
+      <app-chapter11></app-chapter11>
+      <br>
+      <br>
+      <br>
+    </div>
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <span class="tabTitle" [ngStyle]="setting.getHeaderStyle()">अध्याय १२ <br> ॥ भक्तियोग ॥</span>
+      </div>
+    </ng-template>
+    <div [ngStyle]="getTabStyle()" class="adhayaTab" (touchstart)="tabTouchStart($event)"
+      (touchmove)="tabTouchMove($event)" (touchend)="tabTouchEnd($event)">
+      <app-chapter12></app-chapter12>
+      <br>
+      <br>
+      <br>
+    </div>
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <span class="tabTitle" [ngStyle]="setting.getHeaderStyle()">अध्याय १३ <br> ॥ क्षेत्रक्षत्रज्ञविभागयोग ॥</span>
+      </div>
+    </ng-template>
+    <div [ngStyle]="getTabStyle()" class="adhayaTab" (touchstart)="tabTouchStart($event)"
+      (touchmove)="tabTouchMove($event)" (touchend)="tabTouchEnd($event)">
+      <app-chapter13></app-chapter13>
+      <br>
+      <br>
+      <br>
+    </div>
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <span class="tabTitle" [ngStyle]="setting.getHeaderStyle()">अध्याय १४ <br> ॥ गुणत्रयविभागयोग ॥</span>
+      </div>
+    </ng-template>
+    <div [ngStyle]="getTabStyle()" class="adhayaTab" (touchstart)="tabTouchStart($event)"
+      (touchmove)="tabTouchMove($event)" (touchend)="tabTouchEnd($event)">
+      <app-chapter14></app-chapter14>
+      <br>
+      <br>
+      <br>
+    </div>
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <span class="tabTitle" [ngStyle]="setting.getHeaderStyle()">अध्याय १५ <br> ॥ पुरुषोत्तमयोग ॥</span>
+      </div>
+    </ng-template>
+    <div [ngStyle]="getTabStyle()" class="adhayaTab" (touchstart)="tabTouchStart($event)"
+      (touchmove)="tabTouchMove($event)" (touchend)="tabTouchEnd($event)">
+      <app-chapter15></app-chapter15>
+      <br>
+      <br>
+      <br>
+    </div>
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <span class="tabTitle" [ngStyle]="setting.getHeaderStyle()">अध्याय १६ <br> ॥ दैवासुरसंपद्विभागयोग ॥</span>
+      </div>
+    </ng-template>
+    <div [ngStyle]="getTabStyle()" class="adhayaTab" (touchstart)="tabTouchStart($event)"
+      (touchmove)="tabTouchMove($event)" (touchend)="tabTouchEnd($event)">
+      <app-chapter16></app-chapter16>
+      <br>
+      <br>
+      <br>
+    </div>
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <span class="tabTitle" [ngStyle]="setting.getHeaderStyle()">अध्याय १७ <br> ॥ श्रद्धात्रयविभागयोग ॥</span>
+      </div>
+    </ng-template>
+    <div [ngStyle]="getTabStyle()" class="adhayaTab" (touchstart)="tabTouchStart($event)"
+      (touchmove)="tabTouchMove($event)" (touchend)="tabTouchEnd($event)">
+      <app-chapter17></app-chapter17>
+      <br>
+      <br>
+      <br>
+    </div>
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <span class="tabTitle" [ngStyle]="setting.getHeaderStyle()">अध्याय १८ <br> ॥ मोक्षसंन्यासयोग ॥</span>
+      </div>
+    </ng-template>
+    <div [ngStyle]="getTabStyle()" class="adhayaTab" (touchstart)="tabTouchStart($event)"
+      (touchmove)="tabTouchMove($event)" (touchend)="tabTouchEnd($event)">
+      <app-chapter18></app-chapter18>
+      <br>
+      <br>
+      <br>
+    </div>
+  </mat-tab>
+
+</mat-tab-group>
+
+<br>
+<div class="bottom-tab-toolbar" [ngStyle]="setting.getFooterStyle()">
+
+  <span class="toolbar-left-lable toolbar-top-line">{{elapsedTime}}</span>
+
+  <mat-icon [ngStyle]="getPrvButonStyle()" class="toolbar-prev-btn toolbar-bottom-line" (click)="playPrevAudio()">
+    skip_previous</mat-icon>
+  <mat-icon class="toolbar-play-btn toolbar-bottom-line" [hidden]="!audioStarted" (click)="pauseAudio()">pause
+  </mat-icon>
+  <mat-icon class="toolbar-play-btn toolbar-bottom-line" [hidden]="audioStarted" (click)="playAudio()">play_arrow
+  </mat-icon>
+  <mat-icon [ngStyle]="getNextButonStyle()" class="toolbar-next-btn toolbar-bottom-line" (click)="playNextAudio()">
+    skip_next</mat-icon>
+
+  <mat-icon class="toolbar-shuffle-btn toolbar-bottom-line" [ngStyle]="getShuffleAudioButonStyle()"
+    (click)="shuffleAudio()">shuffle</mat-icon>
+  <mat-icon [hidden]="!showRepeatAudioButton" [ngStyle]="getRepeatAudioButonStyle()"
+    class="toolbar-repeat-btn toolbar-bottom-line" (click)="setRepeatAudioOption()">repeat</mat-icon>
+  <mat-icon [hidden]="showRepeatAudioButton" [ngStyle]="getRepeatAudioButonStyle()"
+    class="toolbar-repeat-btn toolbar-bottom-line" (click)="setRepeatAudioOption()">repeat_one</mat-icon>
+
+  <span class="toolbar-right-lable toolbar-top-line">{{totalTime}}</span>
+
+  <mat-slider min="minDuration" max="maxDuration" [(ngModel)]="currentTime" (change)="moveAudio()"
+    class="toolbar-slider toolbar-top-line"></mat-slider>
+</div>

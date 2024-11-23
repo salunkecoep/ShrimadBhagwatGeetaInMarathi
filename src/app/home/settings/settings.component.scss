@@ -1,0 +1,22 @@
+.mat-divider {
+    border-top-color: lightness($color: #333030);
+}
+
+// Color the slide toggle.
+::ng-deep .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+    background-color: #AAB7B8;
+}
+
+::ng-deep .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+    background-color: #5D6D7E;
+}
+
+// Make small combo box.
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: 0em 0 0.3em 0;
+}
+
+::ng-deep .mat-form-field-wrapper {
+    width: 75px;
+    height: 0px;
+}
